@@ -1,2 +1,2 @@
-# Namaste-React
-Contains all code samples and assignments done during this course
+# ReactJS-Learnings
+It contains the code snippets and concepts which I came to know while learning ReactJS
