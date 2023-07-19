@@ -1,12 +1,20 @@
+import { useState , useEffect } from "react";
+import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react"; /* This is named export */
-import Shimmer from "./Shimmer"; /* This is default export */
-import { swiggy_api_URL } from "./constants";
+import { swiggy_api_URL } from "../constants";
+import Shimmer from "./Shimmer";
 
-// Filter the restaurant data according input type
+function filterData(searchText,restaurants){
+  if(searchText==undefined||searchText?.length==0) return restaurants;
+  const filterData = restaurants.filter((restaurant)=>
+  restaurant?.data?.data?.name?.toLowerCase().includes(searchText.toLowerCase())
+  ||
+  restaurant?.data?.data?.cuisines?.includes(searchText));
+  return filterData;
+}
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())||restaurant?.data?.cuisines?.includes(searchText)
   );
   return filterData;
 }
@@ -45,7 +53,7 @@ const Body = () => {
       setFilteredRestaurants(data);
       setErrorMessage("");
       if (data.length === 0) {
-        setErrorMessage("No matches restaurant found");
+        setErrorMessage("No Restaurant matches,Refresh the page");
       }
     } else {
       setErrorMessage("");
@@ -74,17 +82,16 @@ const Body = () => {
             searchData(searchText, allRestaurants);
           }}
         >
-          Search
+          <i className="fas fa-search"/>
         </button>
       </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
 
-      {/* if restaurants data is not fetched then display Shimmer UI after the fetched data display restaurants cards */}
       {allRestaurants?.length === 0 ? (
-        <Shimmer />
+        <Shimmer/>//I will replace this with Shimmer in Future
       ) : (
         <div className="restaurant-list">
-          {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
+          
           {filteredRestaurants.map((restaurant) => {
             return (
               <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
