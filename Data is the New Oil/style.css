@@ -1,0 +1,79 @@
+.header {
+  background-color: #f9f9f9;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.logo {
+  width: 100px;
+}
+
+.nav-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-items li {
+  margin-right: 20px;
+  font-weight: bold;
+  color: orange;
+}
+
+.nav-items li:last-child {
+  margin-right: 0;
+}
+
+.nav-items li a {
+  color:orange;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color:rgba(211, 84, 0,0.8);
+}
+.card{
+  width: 200px;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+.card img{
+  width: 100%;
+}
+.restaurant-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+/*Styling Button*/
+.search-container{
+  margin: 20px 500px;
+  align-items: center;
+  box-shadow: #f9f9f9;
+}
+.search-btn , .search-input{
+  color: orange;
+  background-color: white;
+  border:1px solid orange
+}
+.shimmer-card{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  padding: 5px;
+  background-color: gray;
+}
+.restaurant-menu{
+  display: flex;
+  
+}
+.restaurant-menu{
+  margin:10px;
+}
