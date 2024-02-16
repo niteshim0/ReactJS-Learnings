@@ -2,7 +2,7 @@
 
 Redux Toolkit is a package designed to make working with Redux, a popular state management library for JavaScript applications, more efficient and convenient. Redux itself provides a predictable state container for JavaScript apps, but using it often involves writing a lot of boilerplate code to set up actions, reducers, and store configurations.
 
-Redux Toolkit simplifies the process of managing state in Redux by providing utility functions, conventions, and tools to streamline common tasks. It includes several features:
+Redux Toolkit simplifies the process of managing state in Redux by providing utility functions, conventions, and tools to streamline common tasks. It includes several features: 
 
 ## Features
 
